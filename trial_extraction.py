@@ -1,3 +1,4 @@
+# https://dspy.ai/tutorials/gepa_facilitysupportanalyzer/
 import os
 from pprint import pprint
 
@@ -68,7 +69,20 @@ class FacilitySupportAnalyzerCategories(dspy.Signature):
     Read the provided message and determine the set of categories applicable to the message.
     """
     message: str = dspy.InputField()
-    categories: List[Literal["emergency_repair_services", "routine_maintenance_requests", "quality_and_safety_concerns", "specialized_cleaning_services", "general_inquiries", "sustainability_and_environmental_practices", "training_and_support_requests", "cleaning_services_scheduling", "customer_feedback_and_complaints", "facility_management_issues"]] = dspy.OutputField()
+    categories: List[
+        Literal[
+            "emergency_repair_services",
+            "routine_maintenance_requests",
+            "quality_and_safety_concerns",
+            "specialized_cleaning_services",
+            "general_inquiries",
+            "sustainability_and_environmental_practices",
+            "training_and_support_requests",
+            "cleaning_services_scheduling",
+            "customer_feedback_and_complaints",
+            "facility_management_issues"
+        ]
+    ] = dspy.OutputField()
 
 
 class FacilitySupportAnalyzerMM(dspy.Module):
